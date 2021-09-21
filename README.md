@@ -1,1 +1,1 @@
-# my-favorite-quotes
+# my-favorite-quotes-web-application-project
