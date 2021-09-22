@@ -10,7 +10,7 @@ const factsURL = 'https://asli-fun-fact-api.herokuapp.com/'
 //When I click on the next button, a new fact should be displayed
 
 //and if i like that quote, I can favorite (heart icon) and that quote will save at the bottom of the page under My fun facts
-const favoritedFacts = []
+let favoritedFacts = []
 let currentFact
 
 //Fetch fun fact
@@ -31,6 +31,7 @@ function createFactElement(data){
     return factContainer 
 }
 
+
 // this function handles fetching & loading the fact into the ui
 function loadFact(){
     //1. fetch fact
@@ -38,7 +39,7 @@ function loadFact(){
           // 2. load the fact into the ui
           currentFact = data
           const factContainer = createFactElement(data)
-          const funFactContainer = document.getElementById("fun-fact");
+          const funFactContainer = document.getElementById("fun-fact")
           funFactContainer.innerHTML = ''
           funFactContainer.appendChild(factContainer)
     })
@@ -47,10 +48,15 @@ function loadFact(){
 }
 
 //save favorite fact
-function saveFavoriteFact(savedFact){
-    const saveFactButton = document.getElementById("favorite")
-    currentFact = savedFact
-    
+function saveFavoriteFact(){
+    let funFact = document.getElementById("fun-fact").innerText
+    const favoriteFact = document.getElementById("favorite-facts")
+    const favoriteFactlist = document.createElement('li')
+    favoriteFactlist.innerText = funFact
+    favoriteFact.appendChild(favoriteFactlist)
+   
+
+
 }
 
 //Initialize function
@@ -65,6 +71,7 @@ function initialize(){
 
     //3. when fact is saved, append to my favorite list
     const favoriteButton = document.getElementById("favorite")
+    
     favoriteButton.addEventListener('click', saveFavoriteFact)
 
 }
