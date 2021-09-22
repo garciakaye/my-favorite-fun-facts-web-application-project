@@ -8,11 +8,12 @@ html, body {
 }
 
 body {
-  background: url("https://www.netclipart.com/pp/m/104-1040417_latest-question-mark-background-question-mark-grey-background.png") center no-repeat;
+  background: url("https://cdn.pixabay.com/photo/2016/07/04/02/37/question-mark-1495858_1280.jpg") center no-repeat;
   background-size: cover;
   background-attachment: fixed;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%
+  
 }
 
 .wrapper {
@@ -20,6 +21,17 @@ body {
   width: 60%;
   padding-bottom: 40px;
 }
+
+
+#fun-fact{
+	text-align: center;
+	font-size: 3em;
+	opacity: 0.8;
+	margin-top: 1em;
+	color:rgb(0, 0, 0);
+	font-family: 'Gabriela', serif;
+}
+
 
 #content {
   padding: 20px;
