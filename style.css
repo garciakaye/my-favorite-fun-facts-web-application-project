@@ -32,6 +32,10 @@ h1, h2 {
   text-align: center
 }
 
+#next-fact {
+	float: right
+}
+
 h1 {
   font-size: 3.5em;
   margin-bottom: 0;
