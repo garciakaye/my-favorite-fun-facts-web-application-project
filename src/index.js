@@ -1,6 +1,6 @@
 //On page load, a fun fact should show
 //Event listener 1: DOM Content Load
-//Event listener 2: Submit; a new fun fact should show when the user clicks on the next button
+//Event listener 2: Click; a new fun fact should show when the user clicks on the next button
 //Event listener 3: Click; 'x' button; the user can remove their fun facts
 //Interactivity: Save[heart] button; the heart should fill red when the user clicks on heart button and the fact will be saved below
 
@@ -10,7 +10,7 @@ const factsURL = 'https://asli-fun-fact-api.herokuapp.com/'
 //When I click on the next button, a new fact should be displayed
 
 //and if i like that quote, I can favorite (heart icon) and that quote will save at the bottom of the page under My fun facts
-let favoritedFacts = []
+// let favoritedFacts = []
 let currentFact
 
 //Fetch fun fact
@@ -52,11 +52,17 @@ function saveFavoriteFact(){
     let funFact = document.getElementById("fun-fact").innerText
     const favoriteFact = document.getElementById("favorite-facts")
     const favoriteFactlist = document.createElement('li')
-    favoriteFactlist.innerText = funFact
+    favoriteFactlist.innerText = `${funFact}    `
     favoriteFact.appendChild(favoriteFactlist)
-   
+    let btn = document.createElement('button')
+    btn.addEventListener('click', deleteFavFact)
+    btn.textContent = 'x'
+    favoriteFactlist.appendChild(btn)
+}
 
-
+//delete favorite fact
+function deleteFavFact(e){
+    e.target.parentNode.remove();
 }
 
 //Initialize function
@@ -73,6 +79,9 @@ function initialize(){
     const favoriteButton = document.getElementById("favorite")
     
     favoriteButton.addEventListener('click', saveFavoriteFact)
+    //4. delete favorite face
+    
+    
 
 }
 
