@@ -1,22 +1,10 @@
-const factsURL = 'https://asli-fun-fact-api.herokuapp.com/'
-const commentURL = "http://localhost:3000/comments"
+const factsUrl = 'https://asli-fun-fact-api.herokuapp.com/'
+const commentUrl = "http://localhost:3000/comments"
+
 let currentFact
 
-//submit handler
-// function submitFact(e){
-//     e.preventDefault();
-//     let submittedFact = {
-//         body:e.comment.value
-//     }
-//     initialize(submittedFact)
-// }
-
-//post new fun fact
-function submitFact(address = commentURL)
-    return 
-
-//fetch fun fact
-function fetchFunFact(address = factsURL){
+//Fetch fun fact
+function fetchFunFact(address = factsUrl){
     return fetch(address)
     .then(response => response.json())
     .then(({status, data}) => {
@@ -45,9 +33,9 @@ function loadFact(){
           funFactContainer.innerHTML = ''
           funFactContainer.appendChild(factContainer)
     })
-
-  
 }
+
+
 
 //save favorite fact
 function saveFavoriteFact(){
@@ -67,8 +55,51 @@ function deleteFavFact(e){
     e.target.parentNode.remove();
 }
 
+//submit fact
+function submitFact(e){
+    //debugger
+    e.preventDefault();
+    const data = {
+        "body": document.getElementById("fact").value,
+     };
+
+    fetch(commentUrl, {
+        method: 'POST', // or 'PUT'
+        headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+})
+    .then(response => response.json())
+    .then(data => {
+        //debugger
+        (appendSubmittedFact(data))
+        document.getElementById("comment-box").reset()
+})
+    .catch((error) => {
+  console.error('Error:', error);
+});
+}
+
+function appendSubmittedFact(){
+    let userInput = document.getElementById("fact").value
+        const userFacts = document.getElementById("user-facts")
+        const userFactsList = document.createElement('li')
+        userFactsList.innerText = `${userInput}    `
+        userFacts.appendChild(userFactsList)
+        let btn = document.createElement('button')
+        btn.addEventListener('click', deleteInput)
+        btn.textContent = 'x'
+        userFactsList.appendChild(btn)
+}
+
+function deleteInput(e){
+    e.target.parentNode.remove();
+}
+
 //Initialize function
 function initialize(){
+    //debugger
     //1. initial load of the fact
     loadFact()
 
@@ -81,7 +112,12 @@ function initialize(){
     const favoriteButton = document.getElementById("favorite")
     
     favoriteButton.addEventListener('click', saveFavoriteFact)
-    //4. delete favorite face
+    
+    //4. submit new fact
+    const submitNewFact = document.getElementById("comment-box")
+
+    submitNewFact.addEventListener('submit', submitFact)
+    
 
 }
 

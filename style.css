@@ -95,6 +95,7 @@ h1 {
 }
 
 #comment-box input {
+	margin: auto;
 	padding-right: 100px;
 	padding-left: 1px;
 	padding-bottom: 15px
@@ -109,7 +110,7 @@ h2 {
 	font-size: 2.5em;
 }
 
-li {
+#favorite-facts li {
 	list-style-type: none;
 	padding-top: 15px;
 	font-size: 1.em;
@@ -119,6 +120,24 @@ img {
   max-width: 100%;
   width: 100%;
   height: auto;
+}
+
+h3 {
+	line-height: 50px;
+	font-family: 'Gabriela', serif;
+	color: whitesmoke;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#user-facts {
+	list-style-type: none;
+	text-align: center;
+	color: whitesmoke;
+}
+
+.user-input-container{
+	margin-top: 100px;
 }
 
 /*
