@@ -48,6 +48,14 @@ body {
 	float: right
 }
 
+#next-fact:hover{
+	color:rgb(0, 174, 255);
+}
+
+#favorite:hover{
+	color:red
+}
+
 #buttons {
 	padding-top: 35px;
 	padding-bottom: 35px;
