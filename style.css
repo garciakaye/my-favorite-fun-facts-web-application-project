@@ -45,15 +45,24 @@ body {
 
 
 #next-fact {
-	float: right
+	float: right;
+	background-color:rgb(28, 176, 245)
+}
+
+#favorite {
+	float: left;
+	background-color: orange;
+	
 }
 
 #next-fact:hover{
-	color:rgb(0, 174, 255);
+	color:whitesmoke;
+	font-size: 100%
 }
 
 #favorite:hover{
-	color:red
+	color:whitesmoke;
+	font-size: 100%
 }
 
 #buttons {
@@ -61,6 +70,7 @@ body {
 	padding-bottom: 35px;
 	padding-right: 600px;
 	padding-left: 600px;
+	
 }
 
 h1 {
@@ -71,8 +81,25 @@ h1 {
 }
 
 .my-fun-facts-container {
+	margin-top: 200px;
+}
+
+
+#comment-box {
+	text-align: center;
 	margin-top: 40px;
 }
+
+#comment-box label {
+	color: whitesmoke
+}
+
+#comment-box input {
+	padding-right: 100px;
+	padding-left: 1px;
+	padding-bottom: 15px
+}
+
 
 h2 {
 	line-height: 50px;
