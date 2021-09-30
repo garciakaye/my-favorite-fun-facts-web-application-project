@@ -46,12 +46,14 @@ body {
 
 #next-fact {
 	float: right;
-	background-color:rgb(28, 176, 245)
+	background-color:rgb(28, 176, 245);
+	
 }
 
 #favorite {
 	float: left;
 	background-color: orange;
+	
 	
 }
 
@@ -70,6 +72,7 @@ body {
 	padding-bottom: 35px;
 	padding-right: 600px;
 	padding-left: 600px;
+
 	
 }
 
@@ -81,7 +84,7 @@ h1 {
 }
 
 .my-fun-facts-container {
-	margin-top: 200px;
+	text-align: center;
 }
 
 
@@ -95,15 +98,15 @@ h1 {
 }
 
 #comment-box input {
-	margin: auto;
-	padding-right: 100px;
-	padding-left: 1px;
-	padding-bottom: 15px
+	padding-top:1rem;
+	padding-bottom:1rem;
+
+	
 }
 
 
 h2 {
-	line-height: 50px;
+	line-height: 35px;
 	font-family: 'Gabriela', serif;
 	color: whitesmoke;
 	text-align: center;
@@ -114,7 +117,9 @@ h2 {
 	list-style-type: none;
 	padding-top: 15px;
 	font-size: 1.em;
+	font-style: italic
 }
+
 
 img {
   max-width: 100%;
@@ -123,11 +128,11 @@ img {
 }
 
 h3 {
-	line-height: 50px;
+	line-height: 20px;
 	font-family: 'Gabriela', serif;
 	color: whitesmoke;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 2.5em;
 }
 
 #user-facts {
@@ -137,8 +142,22 @@ h3 {
 }
 
 .user-input-container{
-	margin-top: 100px;
+
+
+
+	
 }
+
+.user-input-container li{
+	list-style-type: none;
+	padding-top: 15px;
+	font-size: 1.em;
+	font-style: italic;
+	color:whitesmoke;
+}
+
+
+
 
 /*
 p {
