@@ -2,15 +2,17 @@ const factsUrl = 'https://asli-fun-fact-api.herokuapp.com/'
 const commentUrl = "http://localhost:3000/comments"
 
 let currentFact
+//let submittedFact
 
 //Fetch fun fact
 function fetchFunFact(address = factsUrl){
     return fetch(address)
     .then(response => response.json())
-    .then(({status, data}) => {
+    .then(({data}) => {
         return data
     })
 }
+
 
 // creates fact ui element
 function createFactElement(data){
@@ -36,7 +38,6 @@ function loadFact(){
 }
 
 
-
 //save favorite fact
 function saveFavoriteFact(){
     let funFact = document.getElementById("fun-fact").innerText
@@ -59,7 +60,7 @@ function deleteFavFact(e){
 function submitFact(e){
     //debugger
     e.preventDefault();
-    const data = {
+    const submittedFact = {
         "body": document.getElementById("fact").value,
      };
 
@@ -68,7 +69,7 @@ function submitFact(e){
         headers: {
         'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(submittedFact),
 })
     .then(response => response.json())
     .then(data => {
@@ -101,7 +102,8 @@ function deleteInput(e){
 function initialize(){
     //debugger
     //1. initial load of the fact
-    loadFact()
+    loadFact();
+
 
     const nextFactButton = document.getElementById("next-fact")
 
